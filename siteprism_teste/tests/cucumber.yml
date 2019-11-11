@@ -1,0 +1,17 @@
+---
+# define que é um template
+
+default: --profile progress -p homolog -p chrome_headless -p html # define qual profile será executado
+
+pretty: --format pretty # executa o projeto mostrando o passo a passo
+progress: --format progress # executa o projeto e só mostra o resultado
+
+homolog: AMBIENTE=homolog # define o valor da constante AMBIENTE como homologação
+producao: AMBIENTE=producao # define o valor da constante AMBIENTE como produção
+
+chrome: BROWSER=chrome # define o valor da constante BROWSER como chrome
+chrome_headless: BROWSER=chrome_headless # define o valor da constante BROWSER como chrome hedless (roda os teste sem abrir o browser)
+firefox: BROWSER=firefox # define o valor da constante BROWSER como firefox
+firefox_headless: BROWSER=firefox_headless # define o valor da constante BROWSER como firefox hedless (roda os teste sem abrir o browser)
+
+html: --format html --out=reports/relatorio.html # gera um relatório no formato html dos testes realizados e salva na pasta report

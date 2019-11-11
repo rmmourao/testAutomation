@@ -1,4 +1,4 @@
-class MapeandoElementoPage < SitePrism::Page
+class MapeandoElementosPage < SitePrism::Page
   set_url '/users/new'
 
   element :nome, '#user_name'
