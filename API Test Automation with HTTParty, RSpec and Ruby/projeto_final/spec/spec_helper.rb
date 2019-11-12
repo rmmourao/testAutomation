@@ -1,18 +1,13 @@
 require 'httparty'
 require 'httparty/request'
 require 'httparty/response/headers'
-require 'faker'
 
-@rspec_yml = YAML.load_file("#{Dir.pwd}/support/rspec.yml")
-@ambiente = @rspec_yml['ambiente']
-CONFIG = YAML.load_file("#{Dir.pwd}/support/data/#{@ambiente}.yml")
-
-require_relative '../services/contatos_service.rb'
-require_relative '../services/criar_service.rb'
+require_relative '../services/login_service.rb'
+require_relative '../services/cadastrar_service.rb'
 
 RSpec.configure do |config|
-  include Contato
-  include Criar
+  include Login
+  include Cadastrar
   config.color = true
   config.formatter = :documentation
   # rspec-expectations config goes here. You can use an alternate
